@@ -1,30 +1,57 @@
-import { randomBytes } from 'crypto'
-const friendDatabase = {}
-
-class Friend {
-    constructor(id, { firstName, lastName, gender, email, contacts }){
-        this.id = id
-        this.firstName = firstName
-        this.lastName = lastName
-        this.gender = gender
-        this.email = email
-        this.contacts = contacts
-    }
-}
+import { Friends, Aliens } from './dbConnectors.mjs'
 
 // resolver map
-export const resolvers = { 
+export const resolvers = {
     Query: {
-        getFriend: ({ id }) => {
-            return new Friend(id, friendDatabase[id])
+        getOneFriend: (root, { id }) => {
+            return new Promise((resolve, object)=>{
+                Friends.findById({_id: id}, (err, friend) => {
+                    if (err) reject(err)
+                    else resolve(friend)
+                })
+            })
+        },
+        getAliens: () => {
+            return Aliens.findAll()
         }
     },
     Mutation: {
-        createFriend: ({ input }) => {
-            let id = randomBytes(10).toString('hex')
-            friendDatabase[id] = input
-            return new Friend(id, input)
+        createFriend: (root, { input }) => {
+            const newFriend = new Friends({
+                firstName: input.firstName,
+                lastName: input.lastName,
+                gender: input.gender,
+                language: input.language,
+                age: input.age,
+                email: input.email,
+                contacts: input.contacts
+            })
+            
+            newFriend.id = newFriend._id
+
+            return new Promise((resolve, object) => {
+                newFriend.save(err => {
+                    if (err) reject(err)
+                    else resolve(newFriend)
+                })
+            })
+        },
+        updateFriend: (root, { input }) => {
+            return new Promise((resolve, object)=>{
+                Friends.findByIdAndUpdate({_id: input.id}, input, { new: true }, (err, friend) => {
+                    if (err) reject(err)
+                    else resolve(friend)
+                })
+            })
+        },
+        deleteFriend: (root, {id}) => {
+            return new Promise((resolve, object)=>{
+                Friends.remove({_id: id}, (err) => {
+                    if (err) reject(err)
+                    else resolve("Successfully deleted friend")
+                })
+            })
         }
     }
- }
+}
 
