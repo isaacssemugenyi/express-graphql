@@ -12,7 +12,7 @@ Base on [GraphQL Essential Training](https://www.linkedin.com/learning/graphql-e
 
 **Note:** 
 * You will need to have mongodb installed or you can adjust the mongo connection string in data/dbConnectors.js file
-* Mongodb can be downloaded from this [link](// https://www.mongodb.com/try/download/community)
+* Mongodb can be downloaded from this [link](https://www.mongodb.com/try/download/community)
 * My obtained certificate from this course can also be found on this [link](https://www.linkedin.com/learning/certificates/3c35d43f1a8185267a5a9003f096a5aa345f3812f71cda1b93816e59b15c9f56?trk=share_certificate)
 
 #### My Contacts
