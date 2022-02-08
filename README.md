@@ -16,7 +16,7 @@ Base on [GraphQL Essential Training](https://www.linkedin.com/learning/graphql-e
 * My obtained certificate from this course can also be found on this [link](https://www.linkedin.com/learning/certificates/3c35d43f1a8185267a5a9003f096a5aa345f3812f71cda1b93816e59b15c9f56?trk=share_certificate)
 
 #### My Contacts
-* [Email](isaacpro01@gmail.com)
+* Email *isaacpro01@gmail.com*
 * [Linkedin](linkedin.com/in/isaac-ssemugenyi-08a50346)
 
 **Happy Coding!**
