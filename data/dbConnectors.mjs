@@ -6,7 +6,7 @@ import 'dotenv/config
 
 // Mongo connection
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb+srv://isaac:zGuIVeqLfgM80Hzi@profiles.clyfn.mongodb.net/graphql?')
+mongoose.connect(process.env.DATABASE)
 
 const friendSchema = new mongoose.Schema({
     firstName: {
