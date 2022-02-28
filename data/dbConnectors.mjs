@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import Sequelize from 'sequelize'
 import _ from 'lodash'
 import casual from 'casual'
-import 'dotenv/config
+import 'dotenv/config'
 
 // Mongo connection
 mongoose.Promise = global.Promise
