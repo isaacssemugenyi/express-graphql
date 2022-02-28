@@ -2,10 +2,11 @@ import mongoose from 'mongoose'
 import Sequelize from 'sequelize'
 import _ from 'lodash'
 import casual from 'casual'
+import 'dotenv/config
 
 // Mongo connection
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/grapgqlDb')
+mongoose.connect('mongodb+srv://isaac:zGuIVeqLfgM80Hzi@profiles.clyfn.mongodb.net/graphql?')
 
 const friendSchema = new mongoose.Schema({
     firstName: {
