@@ -2,6 +2,8 @@ import express from 'express'
 import { schema } from './data/schema.mjs'
 import { graphqlHTTP } from 'express-graphql'
 
+const PORT = process.env.PORT || 4000;
+
 const app = express()
 
 app.get('/', (req, res) => {
@@ -13,4 +15,4 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true
 }))
 
-app.listen(4000, () => console.log(`Server started on port localhost:4000/graphql`))
+app.listen(PORT, () => console.log(`Server started on port localhost:${PORT}/graphql`))
