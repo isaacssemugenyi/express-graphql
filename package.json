@@ -23,6 +23,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^6.1.7",
     "sequelize": "^6.13.0",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+     "dotenv": "^8.2.0"
   }
 }
